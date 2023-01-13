@@ -1,3 +1,49 @@
-#container{
-    background-color: antiquewhite;
+body {
+    background-color: rgb(255, 252, 235);
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+    border: 1px solid yellow;
+    border-radius: 2rem;
+}
+
+.Nav-items > ul {
+list-style-type: none;
+display: flex;
+}
+
+.Nav-items > ul > li {
+padding: 10px;
+}
+
+.logo{
+    width: 100px;
+    margin:0.5rem;
+    border-radius: 30%;
+}
+
+/*========BODY========*/
+.card{
+    width:200px;
+    height:350px;
+ border:2px solid rgb(235, 227, 135) ;
+ border-radius: 2rem;
+ padding: 1rem;
+ margin: 1.5rem;
+
+}
+.card > img {
+    width: 200px;
+    border-radius: 5%;
+    
+}
+
+.resturant-list{
+    margin: 2rem ;
+    display: flex;
+    flex-wrap: wrap;
+    
 }
