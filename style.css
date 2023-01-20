@@ -1,49 +1,84 @@
 body {
-    background-color: rgb(255, 252, 235);
+  background-color: rgb(255, 252, 235);
 }
 
-.header{
-    display: flex;
-    justify-content: space-between;
-    margin: 10px;
-    border: 1px solid yellow;
-    border-radius: 2rem;
+.header {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px;
+  border: 1px solid yellow;
+  border-radius: 2rem;
 }
 
 .Nav-items > ul {
-list-style-type: none;
-display: flex;
+    margin-top: 2rem;
+    font-size: large;
+  list-style-type: none;
+  display: flex;
 }
 
 .Nav-items > ul > li {
-padding: 10px;
+  padding: 10px;
 }
 
-.logo{
-    width: 100px;
-    margin:0.5rem;
-    border-radius: 30%;
+.logo {
+  width: 100px;
+  margin: 0.5rem;
+  border-radius: 30%;
 }
 
 /*========BODY========*/
-.card{
-    width:200px;
-    height:350px;
- border:2px solid rgb(235, 227, 135) ;
- border-radius: 2rem;
- padding: 1rem;
- margin: 1.5rem;
-
+.card {
+  width: 200px;
+  height: 350px;
+  border: 2px solid rgb(235, 227, 135);
+  border-radius: 2rem;
+  padding: 1rem;
+  margin: 1.5rem;
 }
 .card > img {
-    width: 200px;
-    border-radius: 5%;
-    
+  width: 200px;
+  border-radius: 5%;
 }
 
-.restaurant-list{
-    margin: 2rem ;
-    display: flex;
-    flex-wrap: wrap;
-    
+.restaurant-list {
+  margin: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+.search-container{
+    text-align: center;
+}
+.search-input  {
+    display:flex ;
+    text-align: center;
+    padding: 0.7rem 0.7rem;
+    margin: auto;
+    margin-top: 2rem;
+    width:20% ;
+    border: 2px solid rgb(219, 207, 99);
+    border-radius: 1.5rem;
+}
+
+.search-btn{
+    display:inline ;
+    text-align: center;
+    padding: 0.7rem 0.7rem;
+    margin: auto;
+    margin-top: 2rem;
+    width:10% ;
+    border: 2px solid rgb(219, 207, 99);
+    border-radius: 1.5rem;
+    background-color: rgb(255, 241, 92);
+}
+
+.logout-btn,
+.logIn-btn {
+  margin-right: 1rem;
+  margin-top: 2rem;
+  height: 50px;
+  width: 100px;
+  border: solid rgb(219, 207, 99);
+  border-radius: 1.5rem;
+  background-color: rgb(255, 241, 92);
 }
