@@ -30,7 +30,7 @@ body {
 /*========BODY========*/
 .card {
   width: 200px;
-  height: 350px;
+  height: auto fit-content;
   border: 2px solid rgb(235, 227, 135);
   border-radius: 2rem;
   padding: 1rem;
@@ -45,6 +45,7 @@ body {
   margin: 2rem;
   display: flex;
   flex-wrap: wrap;
+  
 }
 .search-container{
     text-align: center;
