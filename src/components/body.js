@@ -2,18 +2,14 @@ import { restaurantList } from "../constant";
 import RestaurantCard from "./RestaurantCard";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
-
-function filterData(searchText, restaurants) {
-  const filterData = restaurants.filter((restaurant) =>
-    restaurant?.data?.name?.toLowerCase()?.includes(searchText.toLowerCase())
-  );
-  return filterData;
-}
+import { Link } from "react-router-dom";
+import { filterData } from "../utils/helper";
+import useOnline from "../utils/useOnline";
 
 const Body = () => {
   const [allRestaurants, setAllRestaurants] = useState([]);
   const [filteredRestaurants, setFilteredRestaurants] = useState([]);
-  const [searchText, setSearchText] = useState();
+  const [searchText, setSearchText] = useState("");
 
   useEffect(() => {
     getRestaurants();
@@ -28,11 +24,15 @@ const Body = () => {
     setAllRestaurants(json?.data?.cards[2]?.data?.data?.cards);
     setFilteredRestaurants(json?.data?.cards[2]?.data?.data?.cards);
   }
-  console.log("render");
+
+  const isOnline = useOnline();
+
+  if (!isOnline) {
+    return <h1>🔴Offline, Please Check your internet Connection !!</h1>;
+  }
 
   if (!allRestaurants) return <h2>Please Wait...</h2>;
 
-  if (filteredRestaurants?.length == 0) return <h1>No restaurant found</h1>;
   return allRestaurants?.length == 0 ? (
     <Shimmer />
   ) : (
@@ -60,11 +60,20 @@ const Body = () => {
       </div>
 
       <div className="restaurant-list">
-        {filteredRestaurants.map((restaurant) => {
-          return (
-            <RestaurantCard {...restaurant.data} key={restaurant.data.id} />
-          );
-        })}
+        {filteredRestaurants?.length === 0 ? (
+          <h1>No restaurant found</h1>
+        ) : (
+          filteredRestaurants.map((restaurant) => {
+            return (
+              <Link
+                to={"/restaurant/" + restaurant.data.id}
+                key={restaurant.data.id}
+              >
+                <RestaurantCard {...restaurant.data} />
+              </Link>
+            );
+          })
+        )}
       </div>
     </>
   );
