@@ -61,6 +61,8 @@ const appRouter = createBrowserRouter([
           <Suspense fallback={<h1>Loading...</h1>}>
             <About />
           </Suspense>
+
+          //when it takes time to load it show msg in <Suspense> element Loading...
         ),
         children: [
           {
